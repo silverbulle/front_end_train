@@ -1,0 +1,59 @@
+<body>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: rgb(50, 73, 205);
+            position: absolute;
+        }
+    </style>
+    <div></div>
+</body>
+<script>
+    "use strict"
+    function interval(delay = 1000, callback) {
+        return new Promise(resolve => {
+            let id = setInterval(() => {
+                callback(id, resolve);
+            }, delay);
+        });
+    }
+    interval(10, (id, resolve) => {
+        const div = document.querySelector("div");
+        let left = parseInt(window.getComputedStyle(div).left);
+        div.style.left = left + 10 + "px";
+        let line = document.body.clientWidth
+        //   console.log(document.body.clientWidth)
+        if (left > line - 200) {
+            console.log("one!!!")
+            clearInterval(id);
+            resolve(div);
+            console.log("one-2")
+        }
+    }).then(div => {
+        return interval(5, (id, resolve) => {
+            // console.log(div)
+            let left = parseInt(window.getComputedStyle(div).left);
+            div.style.left = left - 10 + "px";
+            if (left < 100) {
+                clearInterval(id);
+                // console.log(div)
+                console.log("two!!!")
+                resolve(div);
+                // console.log(div)
+            }
+        });
+    }).then(div => {
+        div.style.background = "red"
+        // interval(101, (id, resolve) => {
+        console.log("three!!!")
+        //     const div = document.querySelector("div");
+        //     // console.log("test");
+        //     // console.log(div);
+        //     div.style.background = "red"
+        //     clearInterval(id);
+        //     // resolve();
+        //     console.log("three-2")
+    });
+
+</script>
