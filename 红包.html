@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
     .footer {
         position: absolute;
         display: grid;
@@ -11,11 +16,11 @@
         text-align: center;
         background-color: rgb(255, 255, 255);
         grid-template-rows: repeat(auto-fill, 5fr);
-        grid-template-columns: repeat(5, 5fr);
+        grid-template-columns: repeat(8, 5fr);
     }
 
     .picture {
-        border: solid 5px rgb(0, 0, 0);
+        border: solid 0.5px rgb(0, 0, 0);
 
     }
 
@@ -176,10 +181,10 @@
         <h2>红包模拟器</h2>
         <form class="formWrapper" action="#" method="post">
             <div>
-                <label for="total">红包个数</label><input type="text" name="total" value="0" /><span>个</span>
+                <label for="total">红包个数</label><input type="text" name="total" value="2" /><span>个</span>
             </div>
             <div>
-                <label for="money" class="money">总金额</label><input type="text" name="money" value="0" /><span>元</span>
+                <label for="money" class="money">总金额</label><input type="text" name="money" value="1" /><span>元</span>
             </div>
             <button type="button" name="send">发红包</button>
         </form>
@@ -219,12 +224,18 @@
         <div class="picture">8</div>
         <div class="picture">9</div>
         <div class="picture">10</div>
+        <div class="picture">11</div>
+        <div class="picture">12</div>
+        <div class="picture">13</div>
+        <div class="picture">14</div>
+        <div class="picture">15</div>
+        <div class="picture">16</div>
     </div>
 </body>
 <script>
 
     var
-        button_send = document.querySelector("button[name=send")
+        button_send = document.querySelector("button[name=send]")
         totalDom = document.querySelector("input[name=total]"),
         moneyDom = document.querySelector("input[name=money]"),
         startWrapper = document.querySelector(".startWrapper"),
@@ -236,8 +247,7 @@
         money = moneyDom.value
         if (total == 0 | money == 0) {
             console.log(total, money)
-            alert("輸入錯誤！！！")
-
+            alert("输入错误！！！")
         }
         else {
             startWrapper.style.display = 'none'
@@ -323,8 +333,8 @@
         info.style.display = ""
         button_get.style.display = ""
         resultWrapper.style.display = "none"
-        totalDom.value = ''
-        moneyDom.value = ''
+        totalDom.value = '2'
+        moneyDom.value = '1'
         bests.forEach((d) => d.style.display = "none")
     }
 
