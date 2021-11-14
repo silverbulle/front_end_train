@@ -18,6 +18,9 @@ body{
     text-align: center;
 }
 #bigbox h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
 }
 #bigbox .inputbox{
@@ -26,20 +29,42 @@ body{
 #bigbox .inputbox .inputtext{
     margin-top: 20px;
 }
+#bigbox .inputtext{
+    /* transform: translate(-50%,-50%); */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    overflow: hidden;
+}
+#bigbox .inputtext::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0%;
+    height: 2px;
+    background: linear-gradient(to right, white, #1abc9c, #f1c40f, #e74c3c, white);
+    transform: translateX(100%);
+    transition:3s;
+}
+#bigbox .inputtext:hover::before{
+    transform: translateX(-100%);
+    /* border: 0;
+    padding: 10px 10px; */
+    border-bottom: 1px solid white;
+    background-color: #00000000;
+    color: rgb(197, 1, 1);
+}
 #bigbox .inputbox .inputtext input{
     border: 0;
     padding: 10px 10px;
     border-bottom: 1px solid white;
     background-color: #00000000;
     color: white;
+    outline: none;
 }
-#bigbox .inputbox .inputtext input:hover{
-    border: 0;
-    padding: 10px 10px;
-    border-bottom: 1px solid white;
-    background-color: #00000000;
-    color: white;
-}
+
 #bigbox .inputbox .inputButton{
     border: 0;
     width: 150px;
