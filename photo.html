@@ -41,14 +41,21 @@
 
     }
 
-    main div:hover {
+    main div:nth-child(1):hover {
+        transform: scale(1.8);
+        color: white;
+        filter: none;
+        z-index: 2;
+    }
+    main div:nth-child(2):hover {
         transform: scale(1.8);
         color: white;
         filter: none;
         z-index: 2;
     }
     main div:nth-child(3):hover{
-        transition: 1.2s;
+        /* transition: 1.2s; */
+        filter: none;
         transform: perspective(900px) rotateX(360deg) scale(1.8);
     }
 
