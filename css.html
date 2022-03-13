@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		div {
+			height: 40px;
+			width: 200px;
+			color: blue;
+			border: 2px black;
+		}
+
+		div:target {
+			color: red;
+		}
+
+		.contain {
+
+			height: 20px;
+			width: 20px;
+			color: rgb(0, 255, 0);
+		}
+
+		article span:last-of-type {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="#hdcms">hdcms111</a>
+	<div></div>
+	<contain>test</contain>
+	<div id="hdcms">
+		hdcms内容管理系统
+	</div>
+	<article>
+		<span>span1</span>
+		<aside>
+			<span>span11</span>
+			<strong>strong</strong>
+		</aside>
+		<span>span2</span>
+	</article>
+</body>
+
+</html>
